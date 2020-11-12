@@ -7,8 +7,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1 className="Title">¡Hazte con todos!</h1>
-        <PokemonList dataList={pokemons} />
+        <h1 className="Title">Mi lista de Pokemon</h1>
+        <PokemonList dataPokemons={pokemons} />
       </div>
     );
   }
