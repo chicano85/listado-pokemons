@@ -7,7 +7,7 @@ class PokemonList extends React.Component {
     return (
       <ul className="PokemonList">
         {this.props.dataPokemons.map((pokemonObjet) => (
-          <li className="pokemonLi" id={this.props.name}>
+          <li className="pokemonItem" id={this.props.name}>
             <Pokemon
               key={pokemonObjet.id}
               name={pokemonObjet.name}
