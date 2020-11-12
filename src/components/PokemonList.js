@@ -23,6 +23,6 @@ class PokemonList extends React.Component {
 
 PokemonList.propTypes = {
   name: PropTypes.string,
-  dataList: PropTypes.array,
+  dataPokemons: PropTypes.array,
 };
 export default PokemonList;
