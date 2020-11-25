@@ -1,0 +1,26 @@
+* {
+  list-style: none;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+.card {
+  border: 2px teal solid;
+  background-color: rgb(144, 235, 235);
+  height: 220px;
+  width: 150px;
+  margin: 15px;
+  transition: transform 0.2s;
+}
+
+.title {
+  color: rgb(151, 12, 151);
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.h1 {
+  text-align: center;
+  color: teal;
+}

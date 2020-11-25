@@ -2,27 +2,27 @@ import React from "react";
 import Pokemon from "./Pokemon";
 import PropTypes from "prop-types";
 
-class PokemonList extends React.Component {
-  render() {
+const PokemonList = (props) => {
+  const items = props.pokemons.map((pokemon) => {
     return (
-      <ul className="PokemonList">
-        {this.props.dataPokemons.map((pokemonObjet) => (
-          <li className="pokemonItem" id={this.props.name}>
-            <Pokemon
-              key={pokemonObjet.id}
-              name={pokemonObjet.name}
-              img={pokemonObjet.url}
-              types={pokemonObjet.types}
-            />
-          </li>
-        ))}
-      </ul>
+      <li className="card" key={pokemon.id}>
+        <Pokemon url={pokemon.url} name={pokemon.name} types={pokemon.types} />
+      </li>
     );
-  }
-}
+  });
+  return (
+    <>
+      <h1 className="h1">Mi lista de Pokemons</h1>
+      <ul className="cards">{items}</ul>
+    </>
+  );
+};
 
 PokemonList.propTypes = {
   name: PropTypes.string,
-  dataPokemons: PropTypes.array,
+  url: PropTypes.string,
+  types: PropTypes.string,
+  pokemons: PropTypes.array,
 };
+
 export default PokemonList;

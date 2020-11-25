@@ -1,25 +1,26 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-class Pokemon extends React.Component {
+class Item extends React.Component {
   render() {
+    const pokeType = this.props.types.map((type, index) => {
+      return <li key={index}>{type}</li>;
+    });
     return (
-      <React.Fragment>
-        <img src={this.props.img} alt={this.props.name}></img>
-        <span className="pokemonTitle">{this.props.name}</span>
-        <ul className="types">
-          {this.props.types.map((type, index) => (
-            <li key={index}>{type}</li>
-          ))}
-        </ul>
-      </React.Fragment>
+      <article>
+        <h2 className="title">{this.props.name}</h2>
+        <div className="img-box">
+          <img src={this.props.url} alt={`Foto de ${this.props.name}`} />
+        </div>
+        <ul className="type-list">{pokeType}</ul>
+      </article>
     );
   }
 }
 
-Pokemon.propTypes = {
+Item.propTypes = {
   name: PropTypes.string,
-  img: PropTypes.string,
+  url: PropTypes.string,
 };
 
-export default Pokemon;
+export default Item;
